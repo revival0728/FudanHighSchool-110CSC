@@ -1,4 +1,9 @@
-import problems
+'''
+terminal judge need get_file() instead get_args()
+'''
+
+import default_judge
+import subprocess
 import importlib
 import time
 import os
@@ -23,25 +28,37 @@ def main():
     write_code(code_area.get('1.0', 'end'))
     result = []
     res.configure(text='Pending')
+    problem_id = all_problem[pid.get()]
+    problem = importlib.import_module('problems.'+problem_id)
+    limit_time = problem.get_limit_time()
+    test_in, test_out = problem.get_file() # ([input], [output])
+    judge = None
     try:
-        user = importlib.import_module('user')
-        problem_id = all_problem[pid.get()]
-        problem = importlib.import_module('problems.'+problem_id)
-        limit_time = problem.get_limit_time()
-        test_in, test_out = problem.get_file() # ([input], [output])
+        judge = problem.judge
+    except Exception:
+        judge = default_judge.judge
+    try:
         for ipt, ans in zip(test_in, test_out):
+            popen = subprocess.Popen(['py', './user/submit_code.py'], stdin=ipt, stdout=subprocess.PIPE, encoding='utf-8')
             start = time.monotonic()
-            ret = user.solution(ipt)
-            during = time.monotonic()-start
+            try:
+                ret = popen.communicate(timeout=limit_time)[0]
+                during = time.monotonic()-start
+            except subprocess.TimeoutExpired:
+                popen.kill()
+                during = limit_time + 0.001
+            if not popen.returncode == 0:
+                result = [('CE', 0)]
+                break
             if during > limit_time:
                 result.append(('TLE', during))
                 break
-            elif ret == ans:
+            elif judge(ret, ans):
                 result.append(('AC', during))
             else:
                 result.append(('WA', during))
                 break
-    except Exception:
+    except subprocess.CalledProcessError:
         result = [('CE', 0)]
     final_result = result[-1]
     res.configure(text='Result: {}, {:.2f}s'.format(final_result[0], final_result[1]))
