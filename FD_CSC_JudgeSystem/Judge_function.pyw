@@ -42,7 +42,7 @@ def main():
                 result.append(('WA', during))
                 break
     except Exception:
-        result = [('CE', 0)]
+        result = [('RE', 0)]
     final_result = result[-1]
     res.configure(text='Result: {}, {:.2f}s'.format(final_result[0], final_result[1]))
     global dinfo

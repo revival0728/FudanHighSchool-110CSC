@@ -1,1 +1,1 @@
-a, b = map(int, input)
+import hihihihihi

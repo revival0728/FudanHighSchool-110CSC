@@ -11,7 +11,7 @@ The judgement will stop if your answer is wrong or finishes juding all the subst
 Below is the probable result of this system
 
 - **TLE**: Time Limit Exceed
-- **CE** : Compile Error
+- **RE** : Runtime Error
 - **WA** : Wrong Answer
 - **AC** : Accept
 
