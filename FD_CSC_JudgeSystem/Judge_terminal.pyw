@@ -83,7 +83,8 @@ def GUI():
     detail.withdraw()
     detail.protocol('WM_DELETE_WINDOW', detail_delb)
     with open('./problems/problem_list.txt', 'r') as f:
-        all_problem.append(f.readline().strip())
+        for i in f.readlines():
+            all_problem.append(i.strip())
     window.title('Fudan CSC Judge System')
     window.geometry('500x600')
     detail.title('Detail')
