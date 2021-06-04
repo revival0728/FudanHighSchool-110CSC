@@ -47,9 +47,6 @@ def main():
             except subprocess.TimeoutExpired:
                 popen.kill()
                 during = limit_time + 0.001
-            if not popen.returncode == 0:
-                result = [('CE', 0)]
-                break
             if during > limit_time:
                 result.append(('TLE', during))
                 break
@@ -59,6 +56,8 @@ def main():
                 result.append(('WA', during))
                 break
     except subprocess.CalledProcessError:
+        result = [('CE', 0)]
+    if not popen.returncode == 0:
         result = [('CE', 0)]
     final_result = result[-1]
     res.configure(text='Result: {}, {:.2f}s'.format(final_result[0], final_result[1]))
