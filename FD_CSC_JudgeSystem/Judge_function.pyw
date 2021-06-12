@@ -3,6 +3,7 @@ import importlib
 import time
 import os
 import tkinter as tk
+import sys
 
 window = tk.Tk()
 res = tk.Label(window, text='Result: -')
@@ -13,6 +14,8 @@ all_problem = []
 pid = tk.IntVar()
 dinfo = ''
 del_show = False
+user = None
+user_imported = False
 
 def write_code(code):
     source = open('./user/submit_code.py', 'w')
@@ -20,11 +23,18 @@ def write_code(code):
     source.close()
 
 def main():
+    global user
+    global user_imported
     write_code(code_area.get('1.0', 'end'))
     result = []
     res.configure(text='Pending')
     try:
-        user = importlib.import_module('user')
+        if not user_imported:
+            user = importlib.import_module('user')
+            user_imported = True
+        else:
+            print('x')
+            user = importlib.reload(user)
         problem_id = all_problem[pid.get()]
         problem = importlib.import_module('problems.'+problem_id)
         limit_time = problem.get_limit_time()
