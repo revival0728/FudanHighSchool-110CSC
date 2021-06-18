@@ -39,7 +39,7 @@ def main():
         judge = default_judge.judge
     try:
         for ipt, ans in zip(test_in, test_out):
-            popen = subprocess.Popen(['py', './user/submit_code.py'], stdin=ipt, stdout=subprocess.PIPE, encoding='utf-8')
+            popen = subprocess.Popen(['py', './user/submit_code.py'], stdin=ipt, stdout=subprocess.PIPE, encoding='utf-8', bufsize=0)
             start = time.monotonic()
             try:
                 ret = popen.communicate(timeout=limit_time)[0]
