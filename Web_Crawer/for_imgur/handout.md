@@ -177,4 +177,5 @@ https://imgur.com/search/?q=想要查的內容
 ### Step3 開始爬蟲
 這邊就直接看程式碼就好了，
 - [Github Link](https://github.com/revival0728/FudanHighSchool-110CSC/blob/master/Web_Crawer/for_imgur/simple_version/for_imgur.py)
+
 有不懂的都歡迎提問
