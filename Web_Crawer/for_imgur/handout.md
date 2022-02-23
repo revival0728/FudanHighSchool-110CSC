@@ -118,7 +118,7 @@ element = html.find_all(name='div', attrs={'class', 'cards'})
 所以會回傳 `list`，
 只要數一下你要的元素在第幾個就好。
 
-## PIL - Image
+## Pillow - Image
 這個是用來顯示圖片的模組，
 是這次實作特別需要用到的，
 跟爬蟲無關，
