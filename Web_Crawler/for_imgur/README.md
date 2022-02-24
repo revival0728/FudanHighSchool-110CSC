@@ -5,7 +5,7 @@
 - [講義連結](https://hackmd.io/@revcoding/fdcsc_110_handouts)
 
 ## 本次上課範例程式碼
-- [Github Link](https://github.com/revival0728/FudanHighSchool-110CSC/tree/master/Web_Crawer/for_imgur)
+- [Github Link](https://github.com/revival0728/FudanHighSchool-110CSC/tree/master/Web_Crawler/for_imgur)
 
 ## 物件導向 (OOP)
 只要開始實作一些比較大型的程式時，
@@ -176,6 +176,6 @@ https://imgur.com/search/?q=想要查的內容
 
 ### Step3 開始爬蟲
 這邊就直接看程式碼就好了，
-- [Github Link](https://github.com/revival0728/FudanHighSchool-110CSC/blob/master/Web_Crawer/for_imgur/simple_version/for_imgur.py)
+- [Github Link](https://github.com/revival0728/FudanHighSchool-110CSC/blob/master/Web_Crawler/for_imgur/simple_version/for_imgur.py)
 
 有不懂的都歡迎提問

@@ -9,6 +9,6 @@ You can download the judge system click [HERE](https://downgit.github.io/#/home?
 ## Web Crawler Tutorial
 
 ### imgur.com
-If you want to download the sample code of this lesson click [HERE](https://downgit.github.io/#/home?url=https://github.com/revival0728/FudanHighSchool-110CSC/tree/master/Web_Crawer/for_imgur)
+If you want to download the sample code of this lesson click [HERE](https://downgit.github.io/#/home?url=https://github.com/revival0728/FudanHighSchool-110CSC/tree/master/Web_Crawler/for_imgur)
 
-If you want to download the `requirements.txt` click [HERE](https://downgit.github.io/#/home?url=https://github.com/revival0728/FudanHighSchool-110CSC/blob/master/Web_Crawer/for_imgur/requirements.txt)
+If you want to download the `requirements.txt` click [HERE](https://downgit.github.io/#/home?url=https://github.com/revival0728/FudanHighSchool-110CSC/blob/master/Web_Crawler/for_imgur/requirements.txt)
