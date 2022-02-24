@@ -1,4 +1,4 @@
-# FDCSC110 Feb25 Handout - Web Crawer I
+# FDCSC110 Feb25 Handout - Web Crawelr I
 ---
 
 ## 複習上學期的東西
