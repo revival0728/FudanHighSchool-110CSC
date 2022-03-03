@@ -1,5 +1,7 @@
 #!python3.9
 
+# a001, a523, a520
+
 import requests as rqs
 from bs4 import BeautifulSoup as bsp
 
@@ -70,10 +72,15 @@ def process_textp(content, pkeys: list, name: str):
         data = i.find_all(name=name)
         if len(data) != 0:
             for j in data:
-                blocks[pkeys[pkeys_id]] += (j.text + '\n\n')
+                print(j)
+                img = j.find(name='img')
+                if not (img is None):
+                    blocks[pkeys[pkeys_id]] += (f"![image]({img.get('src')})" + '\n\n')
+                else:
+                    blocks[pkeys[pkeys_id]] += (j.text.strip('#') + '\n\n')
                 ok = True
         else:
-            blocks[pkeys[pkeys_id]] += i.text + '\n\n'
+            blocks[pkeys[pkeys_id]] += i.text.strip('#') + '\n\n'
             ok = True
 
         if ok:
@@ -131,11 +138,6 @@ def process_information(content):
     blocks['information'] += info[-1] + '\n```\n\n'
 
 def get_input():
-    # urls = {
-    #    'DDJ': 'https://dandanjudge.fdhs.tyc.edu.tw',
-    #    'ZJ': 'https://zerojudge.tw'
-    #}
-    #web_ipt = input('Please input the web name (DDJ/ZJ): ')
     pid_ipt = input('Please input the problem id: ')
     return 'https://dandanjudge.fdhs.tyc.edu.tw', pid_ipt
 
