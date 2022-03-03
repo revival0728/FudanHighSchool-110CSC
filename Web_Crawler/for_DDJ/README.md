@@ -44,11 +44,11 @@ https://dandanjudge.fdhs.tyc.edu.tw/ShowProblem?problemid=題目的編號
 
 如果不想手動安裝套件的話[點選連結](https://downgit.github.io/#/home?url=https://github.com/revival0728/FudanHighSchool-110CSC/blob/master/Web_Crawler/for_DDJ/requirements.txt)來下載 `requirements.txt`
 
-## Step4 包裝進 `.md` 檔
+### Step4 包裝進 `.md` 檔
 也就是 `Markdown` 檔，
 這裡建議在變成檔案後使用 [HackMd](https://hackmd.io/) 來閱覽。
 
-### `open()` 使用方法
+#### `open()` 使用方法
 這個函數有兩種使用方法，
 我們這邊教簡單的版本。
 使用語法如下
