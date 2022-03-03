@@ -79,12 +79,12 @@ scores = [
 想要研究的可以[點選連結](https://docs.python-requests.org/en/latest/)去自習。
 
 ### 匯入模組
-```python=
+```python
 import requests as rqs
 ```
 
 ### get()
-```python=
+```python
 response = rqs.get('https://imgur.com/search?q=hololive')
 ```
 這個函數會回傳造訪網頁的所有結果，
