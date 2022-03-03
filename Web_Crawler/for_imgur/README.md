@@ -21,7 +21,7 @@
 今天要記錄每位學生的段考成績，
 需要紀錄的資訊有 **姓名**、**學號**、**數學成績** 和 **自然成績**，
 如果不使用 **OOP** 的程式碼如下
-```python=
+```python
 name = ['John', 'Tree', 'Hank']
 ID = ['911001', '911002', '911003']
 math_score = [100, 95, 90]
@@ -31,7 +31,7 @@ science_score = [90, 95, 100]
 但是等到實際操作時會非常不直覺，
 因為會是用索引值來操作，
 其實這個方法可以用 `dict` 來解決
-```python=
+```python
 scores = {
     'John': {
         'ID': '911001',
@@ -46,7 +46,7 @@ scores = {
 但是有一個缺點——不易宣告，
 這個辦法也很好解決，
 寫一個打包函數就好了。
-```python=
+```python
 def score_packer(ID: str, math_score: int, science_score: int):
     return {
         'ID': ID,
@@ -56,7 +56,7 @@ def score_packer(ID: str, math_score: int, science_score: int):
 ```
 以上看到的一連串變化就是 **OOP** 的前身，
 其實只要把打包函數、`dict` 包進一個 `class` 裡面就完成 **OOP** 的實現了。
-```python=
+```python
 class score:
     def __init__(self, name: str, ID: str, math_score: int, science_score: int):
         self.name = name
@@ -96,17 +96,17 @@ response = rqs.get('https://imgur.com/search?q=hololive')
 想要更深入研究的可以[點選連結](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 ### 匯入模組
-```python=
+```python
 from bs4 import BeautifulSoup as bsp
 ```
 
 ### 宣告
-```python=
+```python
 html = bsp(html_text, 'html.parser')
 ```
 
 ### find_all(name, attrs, recursive, string, **kwargs)
-```python=
+```python
 element = html.find_all(name='div', attrs={'class', 'cards'})
 ```
 這個函數很重要，
@@ -125,17 +125,17 @@ element = html.find_all(name='div', attrs={'class', 'cards'})
 想要深入學習的請[點選連結](https://pillow.readthedocs.io/en/stable/reference/Image.html?highlight=image)
 
 ### 匯入模組
-```python=
+```python
 from PIL import Image
 ```
 
 ### 宣告
-```python=
+```python
 image = image.open(res_pic.raw)
 ```
 
 ### show()
-```python=
+```python
 image.show()
 ```
 這個函數是用來把圖片顯示到畫面的，

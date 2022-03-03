@@ -1,6 +1,6 @@
 #!python3.9
 
-# a001, a523, a520
+# 建議的測試題目編號 a001, a523, a520
 
 import requests as rqs
 from bs4 import BeautifulSoup as bsp
@@ -64,7 +64,7 @@ def make_md(problem: dict):
 {problem['source']}
 '''
 
-def process_textp(content, pkeys: list, name: str):
+def process_textp(content, pkeys: list, name: str): # 題目敘述、輸入說明、輸出說明、提示
     pkeys_id = 0
     for id in [0, 1, 2, 5]:
         i = content[id]
@@ -72,7 +72,6 @@ def process_textp(content, pkeys: list, name: str):
         data = i.find_all(name=name)
         if len(data) != 0:
             for j in data:
-                print(j)
                 img = j.find(name='img')
                 if not (img is None):
                     blocks[pkeys[pkeys_id]] += (f"![image]({img.get('src')})" + '\n\n')
@@ -86,7 +85,7 @@ def process_textp(content, pkeys: list, name: str):
         if ok:
             pkeys_id += 1
 
-def process_textpre(content, pkeys: list, name: str):
+def process_textpre(content, pkeys: list, name: str): # 範例輸入、範例輸出
     pkeys_id = 0
     for i in content:
         ok = False
@@ -101,12 +100,12 @@ def process_textpre(content, pkeys: list, name: str):
             blocks[pkeys[pkeys_id]] += text + '```\n'
             pkeys_id += 1
 
-def process_tag(content):
+def process_tag(content): # 標籤
     material = content[-2].find_all(name='a')
     for i in material:
         blocks['tag'] += f"[{i.text}]({url+ i.get('href')[1:].replace(' ', '%')}) "
 
-def process_source(content):
+def process_source(content): # 出處(作者)
     material = content[-1].find_all(name='a')
     if len(material) == 1:
         for i in material:
@@ -116,11 +115,11 @@ def process_source(content):
             blocks['source'] += f"[{material[i].text}]({url + material[i].get('href')[1:].replace(' ', '%')})"
         blocks['source'] += f" authered by [{material[-1].text}]({url + material[-1].get('href')[1:].replace(' ', '%')})"
 
-def process_title(content):
+def process_title(content): # 題目名稱
     material = content.find_all(name='div', attrs={'class', 'h1'})
     blocks['title'] = material[0].text[0:5] + ' ' +material[0].find(name='span').text
 
-def process_information(content):
+def process_information(content): # 測資資訊
     material = content.find_all(name='div', attrs={'class', 'panel-body'})
     info = material[-1].get_text(strip=True).split()
     blocks['information'] += f"```\n{info[0]}{info[1]}MB\n```\n```\n"
