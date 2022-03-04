@@ -64,6 +64,35 @@ def make_md(problem: dict):
 {problem['source']}
 '''
 
+def make_html(innerHTML):
+    MathJax_settings = '''\
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$']]}
+});
+</script>
+'''
+    return f'''\
+<!DOCTYPE html>
+<head>
+<meta charset='utf-8'>
+<style>
+pre {"{background-color: rgb(217, 217, 217); padding: 10px; border-radius: 3px;}"}
+a {"{color: blue;}"}
+hr {"{background-color: black;}"}
+p {"{font-family: Arial;}"}
+h1, h2 {"{font-family: Arial; background-color: rgb(230, 230, 230); padding: 5px; border-radius: 3px;}"}
+</style>
+{MathJax_settings}
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+{innerHTML}
+</body>
+'''
+
 def process_textp(content, pkeys: list, name: str): # 題目敘述、輸入說明、輸出說明、提示
     pkeys_id = 0
     for id in [0, 1, 2, 5]:
@@ -164,9 +193,18 @@ def main():
     for i in blocks:
         if blocks[i].strip() == '':
             blocks[i] = '未提供此資訊\n\n'
-    
-    with open('test.md', 'w', encoding='utf-8') as f:
-        f.write(make_md(blocks))
+
+
+    to_html_res = rqs.post('https://api.github.com/markdown', json= {
+        'text': make_md(blocks),
+        'mode': 'markdown'
+    })
+
+    with open('test.html', 'w', encoding='utf-8') as f:
+        f.write(make_html(to_html_res.text))
+
+    #with open('test.md', 'w', encoding='utf-8') as f:
+    #    f.write(make_md(blocks))
 
 if __name__ == '__main__':
     main()
