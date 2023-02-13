@@ -4,16 +4,16 @@
 
 ## Syntax 語法
 `Python` 是一種**強縮排語言**，意思是它的縮排就是它語法的一部份。
-:::spoiler `縮排是什麼?`
+
+`縮排是什麼?`
 縮排是把程式碼依照一定的格式用**換行、Tab、Space**來做排版
 在**弱縮排語言**中，這個動作只是讓程式碼更好閱讀而已
-:::
 
 而 `Python` 是以**Tab**或是**Space**加上**換行**來作為主要縮排語法。
 縮排的時機原則上只要上一行的最後一個字元是「:」，就要縮排。
 
 範例程式碼
-```python=
+```python
 def main():
     try:
         print(input())
@@ -30,11 +30,11 @@ if __name__ == '__main__':
 而 `Python` 的註解是用 `#` 來表示
 
 範例程式碼
-```python=
+```python
 print('hello, world.')    # output "hello, world."
 ```
 很可惜的是 `Python` 沒有多行註解，但可以用多行字串宣告來代替。
-```python=
+```python
 print('hello, world.')
 '''
 This is a Program
@@ -46,14 +46,14 @@ that output "hello, world.".
 在 `Python` 中，因為是**弱型別語言**，所以不需要宣告變數就可以使用。
 
 範例程式碼
-```python=
+```python
 a = 1.0
 b = '1.0'
 c = 1
 print(b)
 ```
 這裡要注意，雖然不需要宣告，但在賦予一個變數值之前，是不能使用的。
-```python=
+```python
 print(FDCSC)    # 這是非法的
 ```
 
@@ -65,7 +65,7 @@ print(FDCSC)    # 這是非法的
 基本上，如果有超過一個變數的話要用 `split()`  函數。
 
 範例程式碼
-```python=
+```python
 a, b, c = map(int, input().split())    # 輸入 "1 2 3"
 print(a+b+c)    # 輸出 6
 ```
@@ -101,14 +101,14 @@ print(a+b+c)    # 輸出 6
 |False|True|
 
 範例程式碼
-```python=
+```python
 print(True and False)    # False
 print(not True)    # False
 print(True or False)    # True
 ```
 
 ### 語法
-```python=
+```python
 if [Boolean]:
     pass
 elif [Boolean]:
@@ -123,7 +123,7 @@ else:
 - `pass` 需要再在一個縮排後，沒有程式碼時使用，目的是保持語法的正確性。
 
 範例程式碼
-```python=
+```python
 a, b = map(int, input().split())
 if a > b:
     print(a)
@@ -138,7 +138,7 @@ else:
 如果輸入「4 4」會輸出「8」(第七行)
 
 ## Try...Except 偵錯
-```python=
+```python
 try:
     pass
 except [Exception]:
