@@ -4,8 +4,9 @@
 有很多的經濟、物理、太空等需要大量計算的科系都會使用 `Python` (還有 `Matlab` 啦)
 
 還有探究課也會用到 :poop:
-:::spoiler `code`
-```python=
+
+`code`
+```python
 import math
 import os
 
@@ -43,7 +44,6 @@ if __name__ == '__main__':
         print('tan(PI/2-x) = {}'.format(tan(PI/2-deg_to_rad(deg))))
     os.system('pause')
 ```
-:::
 
 ## Functions from `math`
 
@@ -162,7 +162,7 @@ if __name__ == '__main__':
 回傳 $\tanh^{-1} x$
 
 ### 常數
-有 $\pi$、$e$。
+有 $\pi、e$。
 
 #### `tau`
 相當於 $2\pi$
@@ -177,9 +177,9 @@ if __name__ == '__main__':
 因為大部分的運算子之前都上過了，
 所以這裡著重在**位元運算**。
 
-原則上所有整數 $z$ 都可以被表示為 $\sum \limits_{k=0}^{\infty} a_i\times 2^k$，其中 $a_i\in \{0, 1\}$，
+原則上所有整數 $z$ 都可以被表示為 $\sum \limits_{k=0}^{\infty} a_i\times 2^k$，其中 $a_i\in \\{0, 1\\}$，
 電腦就是以此原則把 $2$ 進位轉換成 $10$ 進位。
-舉例 ${10}_{(10)} = {1010}_{(2)}$。
+舉例 $\{10\}\_\{(10)\} = \{1010\}\_\{(2)\}$。
 負數的轉換比較複雜，這裡暫時不講
 
 **位元運算子**主要有 $4$ 個，分別是 `&`、`|`、`^`、`~`。
