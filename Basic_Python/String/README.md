@@ -14,7 +14,7 @@
 
 ### 宣告方法
 可以直接設值，讓編譯器自己判斷。
-```python=
+```python
 x = "Hello World"    # str	
 x = 10    # int	
 x = 10.5    # float	
@@ -32,7 +32,7 @@ x = memoryview(bytes(10))    # memoryview
 ```
 或者是可以直接用 `class` 的**建構元**。
 這裡舉幾個例子
-```python=
+```python
 x = str("Hello World")    # str
 x = int(10)    # int
 x = dict(Club="FDCSC", Ranking=1)
@@ -64,7 +64,7 @@ x = dict(Club="FDCSC", Ranking=1)
 `str` 可以取出字串中特定的字元，或是特定的一段子字串。
 
 範例程式碼
-```python=
+```python
 s = 'FDCSC'
 
 print(s[0])    # 'F'
@@ -78,7 +78,7 @@ print(s[2:5])    # 'CSC'
 由於可以修改 `str` 的函數很多，這裡就講一些比較常用的。
 
 範例程式碼
-```python=
+```python
 s = 'FDCSC'
 
 s[0] = 'D'    # s = 'DDCSC'
@@ -103,7 +103,7 @@ s = 3*'a'    # s = 'aaa'
 ### 其他輔助函數
 這裡介紹幾個好用的輔助函數
 
-```python=
+```python
 a = 'a123a'
 b = '123'
 c = 'aa'
@@ -136,7 +136,7 @@ print(len(a))    # 5
 一個變數可以依據他宣告的地方不同而分成**全域變數**和**區域變數**。
 下面就用範例程式碼來講解
 
-```python=
+```python
 n, m = 1, 2
 
 def add():
@@ -154,7 +154,7 @@ print(add())    # 3
 所以 `a`、`b` 只能在 `add()` 函數中使用。
 
 另外在宣告前面加上 `global` 就會讓那個變數宣告成**全域變數**。
-```python=
+```python
 n, m = 1, 2
 
 def add():
@@ -170,7 +170,7 @@ print(add())    # 3
 
 現在我們要來拆解第一次上課的程式碼了，
 還記得下面這行毒瘤嗎?
-```python=
+```python
 m, n = map(int, input().split())
 ```
 現在你應該除了 `map()` 函數都要看的懂了。
