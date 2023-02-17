@@ -12,7 +12,7 @@
 但比起 `for` 迴圈更容易出現無限迴圈。
 
 ### 語法
-```python=
+```python
 while [Boolean]:
     ...
 ```
@@ -20,14 +20,14 @@ while [Boolean]:
 ### 應用
 
 1.
-```python=
+```python
 while True:
     print(input())
 ```
 一直輸出輸入進來的東西
 
 2.
-```python=
+```python
 i, s = 1, 0
 while i <= 10:
     s += i
@@ -37,7 +37,7 @@ print(s)    # 55
 計算 $1$ 到 $10$ 的總和
 
 3.
-```python=
+```python
 ar = ['John', 'Tree', 'Han']
 i = 0
 while i < len(ar):
@@ -50,7 +50,7 @@ while i < len(ar):
 `break` 和 `continue` 都是 `Python` 裡的語法，
 功能分別是跳脫迴圈和進行下一次的迴圈
 
-```python=
+```python
 while True:
     n = int(input())
     if n%2 == 0:
@@ -69,8 +69,8 @@ while True:
 ### 練習
 [旦旦解題農場-a005: 獨角蟲進化計算器](http://203.64.191.163/ShowProblem?problemid=a005)
 
-:::spoiler `參考解答`
-```python=
+`參考解答`
+```python
 def main():
     w, c, d, ans = 0, 0, 0, 0
     c, w = map(int, input().strip().split())
@@ -94,7 +94,6 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-:::
 
 ## For Loop
 `for` 迴圈是所有迴圈裡最不容易出錯的，
@@ -103,7 +102,7 @@ if __name__ == '__main__':
 不然很難出現無限迴圈。
 
 ### 語法
-```python=
+```python
 for [Variables] in [Iterable Object]:
     ...
 ```
@@ -118,7 +117,7 @@ for [Variables] in [Iterable Object]:
 ### range 結構
 `range` 是 `python` 專門用來迭代的物件，
 宣告方式如以下
-```python=
+```python
 range([Begin], [End], [Step])
 ```
 上面程式碼的意思是，
@@ -139,14 +138,14 @@ range([Begin], [End], [Step])
 ### 應用
 
 1.
-```python=
+```python
 for i in range(10):
     print(input())
 ```
 輸入 $10$ 次，並且每次都輸出輸入的東西
 
 2.
-```python=
+```python
 s = 0
 for i in range(1, 11):
     s += i
@@ -155,7 +154,7 @@ print(s)    # 55
 計算 $1$ 到 $10$ 的總和
 
 3.
-```python=
+```python
 ar = ['John', 'Tree', 'Han']
 for i in ar:
     print(i)
@@ -166,8 +165,9 @@ for i in ar:
 
 ### 練習
 [旦旦解題農場-a028: 文文的求婚--續集 (Case 版)](http://203.64.191.163/ShowProblem?problemid=a028)
-:::spoiler `參考解答`
-```python=
+
+`參考解答`
+```python
 def main():
     T = int(input())
     ans = ['a normal year', 'a leap year']
@@ -179,12 +179,12 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-:::
 
 
 [旦旦解題農場-a191: Rex 看牙1](http://203.64.191.163/ShowProblem?problemid=a191)
-:::spoiler `參考解答`
-```python=
+
+`參考解答`
+```python
 def main():
     try:
         while True:
@@ -201,7 +201,6 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-:::
 
 ## Function
 程式裡的函數跟數學中的函數有一點不太一樣，
@@ -210,7 +209,7 @@ if __name__ == '__main__':
 在 `Python` 中更是如此。
 
 ### 宣告
-```python=
+```python
 def [Function Name]([Arguments]):
     ...
 ```
@@ -218,7 +217,7 @@ def [Function Name]([Arguments]):
 ### 使用方法
 
 1.
-```python=
+```python
 print(input())
 ```
 上面的程式碼是用來輸出輸入的東西。
@@ -230,7 +229,7 @@ print(input())
 `print()` 則沒有。
 
 2.
-```python=
+```python
 ar = [i for i in range(1, 11)]
 print(sum(ar))    # 55
 ```
