@@ -8,13 +8,13 @@
 在 `Python` 中更是如此。
 
 ### 宣告
-```python=
+```python
 def [Function Name]([Arguments]):
     ...
 ```
 
 範例程式碼
-```python=
+```python
 def A(x):
     return x**2
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 ### 使用方法
 
 1.
-```python=
+```python
 print(input())
 ```
 上面的程式碼是用來輸出輸入的東西。
@@ -53,7 +53,7 @@ print(input())
 `print()` 則沒有。
 
 2.
-```python=
+```python
 ar = [i for i in range(1, 11)]
 print(sum(ar))    # 55
 ```
@@ -78,7 +78,7 @@ $$
 
 而在程式上會這樣寫
 
-```python=
+```python
 def fib(n):
     if n == 1:
         return 1
@@ -105,14 +105,14 @@ def fib(n):
 3. 修改
 
 ### 宣告
-```python=
+```python
 a = list()
 b = []
 ```
 
 ### 取值
 可以用運算子 `[]`
-```python=
+```python
 lst = [1, 2, 'a', 'b', ['c']]
 
 print(lst[1])    # 2
@@ -120,7 +120,7 @@ print(lst[4][1])    # 'c'
 ```
 
 或是迭代一個 `List` 物件
-```python=
+```python
 lst = [1, 2, 'a', 'b', ['c']]
 
 for i in lst:
@@ -135,7 +135,7 @@ for i in lst:
 修改可以分成三個部分，
 修改值、增加節點、刪除節點。
 
-```python=
+```python
 lst = [1, 2, 'a', 'b', ['c']]
 
 lst[3] = 'x'
@@ -154,7 +154,7 @@ print(lst)    # []
 
 ### 合併
 其實就把兩個 `List` 相加就好
-```python=
+```python
 lst1, lst2 = [1, 2], ['a', 'b']
 lst3 = lst1 + lst2
 print(lst3)    # [1, 2, 'a', 'b']
@@ -162,7 +162,7 @@ print(lst3)    # [1, 2, 'a', 'b']
 
 ### 排序
 直接呼叫 `sort()` 函數
-```python=
+```python
 lst = [5, 2, 3, 1, 4]
 lst.sort()
 print(lst)    # [1, 2, 3, 4, 5]
@@ -177,7 +177,7 @@ print(lst)    # [1, 2, 3, 4, 5]
 但是他有一個優勢是其他結構無法取代的，
 那就是 `unpack`。
 
-```python=
+```python
 tup = 1, 2, 3
 
 a, b, c = tup
